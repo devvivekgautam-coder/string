@@ -7,12 +7,14 @@ int main () {
     gets(str);
 
     for (int i = 0; str[i] != '\0'; i++) {
-        if (str[i] >= 'A' && str[i] <= 'Z') {
-            printf("%c", str[i] + 32);
+        if (str[i] >= 65 && str[i] <= 90) {
+           str[i] = str[i] + 32;
         }
-        else {
-            printf("%c", str[i] - 32);
+        else if (str[i] >= 97 && str[i] <= 122) {
+            str[i] = str[i] - 32;
         }
     }
+
+    printf("%s", str);
     return 0;
 }
